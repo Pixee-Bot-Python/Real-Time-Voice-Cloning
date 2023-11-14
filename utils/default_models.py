@@ -53,4 +53,4 @@ def ensure_default_models(models_dir: Path):
 
         assert target_path.exists() and target_path.stat().st_size == size, \
             f"Download for {target_path.name} failed. You may download models manually instead.\n" \
-            f"https://drive.google.com/drive/folders/1fU6umc5uQAVR2udZdHX-lDgXYzTyqG_j"
+            "https://drive.google.com/drive/folders/1fU6umc5uQAVR2udZdHX-lDgXYzTyqG_j"
