@@ -39,8 +39,8 @@ def preprocess_dataset(datasets_root: Path, out_dir: Path, n_processes: int, ski
     # Verify the contents of the metadata file
     with metadata_fpath.open("r", encoding="utf-8") as metadata_file:
         metadata = [line.split("|") for line in metadata_file]
-    mel_frames = sum([int(m[4]) for m in metadata])
-    timesteps = sum([int(m[3]) for m in metadata])
+    mel_frames = sum(int(m[4]) for m in metadata)
+    timesteps = sum(int(m[3]) for m in metadata)
     sample_rate = hparams.sample_rate
     hours = (timesteps / sample_rate) / 3600
     print("The dataset consists of %d utterances, %d mel frames, %d audio timesteps (%.2f hours)." %
